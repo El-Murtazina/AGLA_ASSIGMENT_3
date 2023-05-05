@@ -55,7 +55,7 @@ int main() {
 
     fprintf(pipe, "set multiplot\n");
     fprintf(pipe, "set xlabel 'Time'\n");
-    fprintf(pipe, "set ylabel 'Number of animals'\n");
+    fprintf(pipe, "set ylabel 'Number of creatures'\n");
 
     fprintf(pipe, "plot '-' lc 'orange' linewidth 2 title 'Victims' with lines\n");
 
@@ -78,10 +78,10 @@ int main() {
 
     fprintf(pipe, "set term wxt 1\n");
 
-    fprintf(pipe, "set xlabel 'Number of victims'\n");
-    fprintf(pipe, "set ylabel 'Number of killers'\n");
+    fprintf(pipe, "set ylabel 'Number of victims'\n");
+    fprintf(pipe, "set xlabel 'Number of killers'\n");
 
-    fprintf(pipe, "plot '-' using 1:2 lc 'dark-blue' linewidth 2 title 'k(v)' with lines\n");
+    fprintf(pipe, "plot '-' using 1:2 lc 'dark-blue' linewidth 2 title 'v(k)' with lines\n");
 
     for (int i = 0; i <= N; i++) {
         fprintf(pipe, "%lf %lf\n", victims[i], killers[i]);
